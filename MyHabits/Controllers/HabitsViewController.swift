@@ -114,6 +114,7 @@ extension HabitsViewController: UICollectionViewDataSource, UICollectionViewDele
             if let name = cell.viewWithTag(1) as? UILabel {
                 name.text = habit.name
             }
+        
             if let emoji = cell.viewWithTag(2) as? UILabel {
                 emoji.text = habit.emoji
             }

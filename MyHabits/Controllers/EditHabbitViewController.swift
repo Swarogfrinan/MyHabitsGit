@@ -41,6 +41,12 @@ class EditHabbitViewController: UIViewController {
         }
         
         //MARK: - Methods
+    func delete() {
+        self.habit?.trackDates.remove(at: 1)
+        habit?.
+        self.dismiss(animated: true, completion: nil)
+    }
+    
         ///Кнопка  выбора времени для новой привычки.
         @IBAction func datePickerFormatter(_ sender: UIDatePicker) {
            let date = sender.date
@@ -67,18 +73,23 @@ class EditHabbitViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-                // create the alert
-        let alert = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \(nameLabel.description)?", preferredStyle: UIAlertController.Style.alert)
+                /// create the alert
+        let alert = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \(nameLabel!)?", preferredStyle: UIAlertController.Style.alert)
         
                 // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Удалить", style: UIAlertAction.Style.destructive, handler: nil))
-        self.habit?.trackDates.remove(at: 1)
+        alert.addAction(UIAlertAction(title: "Удалить", style: UIAlertAction.Style.destructive, handler: { action in
+            self.delete()
+        }))
+        
+        
                 alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil))
         
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
             }
+    
     }
+
 
 
 
