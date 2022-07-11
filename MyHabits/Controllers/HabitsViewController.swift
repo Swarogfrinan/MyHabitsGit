@@ -27,12 +27,14 @@ class HabitsViewController: UIViewController, AddHabitDelegate, UISearchBarDeleg
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         searchBar.delegate = self
-        habitsCollectionView.reloadData()
-
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        reloadHabbit()
     }
     
     public func reloadHabbit() {
     habitsCollectionView.reloadData()
+        self.view.layoutIfNeeded()
     }
     
     //MARK: - Methods

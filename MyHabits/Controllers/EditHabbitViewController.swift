@@ -4,28 +4,29 @@
 //
 //  Created by Ilya Vasilev on 18.05.2022.
 //
-
+//Это Вью-контроллер изменения привычки пользователя с возможностью удаления её
 import UIKit
-
+///Протокол сохранения изменённой привычки.
 protocol EditHabitViewControllerDelegate: AnyObject {
     func saveEditHabit(_ habit: Habit)
 }
 
 class EditHabbitViewController: UIViewController {
-    //MARK: - IBOutlet
+    //MARK: - let/var
     let store = HabitsStore.shared
-     var habits: [Habit] = []
     var habit: Habit?
-    ///navigation bar
+    
+    //MARK: - IBOutlets
+    ///navigation bar - buttons
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
-    ///bot screen
+    ///bot screen IBOutlet
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
-    ///top screen
+    ///top screen IBOutlet
     @IBOutlet weak var dateStackLabel: UILabel!
     @IBOutlet weak var currentTimeStackLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -35,28 +36,32 @@ class EditHabbitViewController: UIViewController {
         //MARK: - Lifecycle
         override func viewDidLoad() {
             super.viewDidLoad()
+            ///Уменьшение тайтла при прокрутке скрина.
         navigationController?.navigationBar.prefersLargeTitles = true
+            
         colorButton.layer.cornerRadius = colorButton.frame.size.height / 2
-//        textField.placeholder = Habit.name
+            nameLabel.text = habit?.name
         }
         
         //MARK: - Methods
-    func delete() {
-        self.habit?.trackDates.remove(at: 1)
-        habit?.
+    ///Функция удаления привычки из памяти.
+   private func delete() {
+        self.habit?.trackDates.removeAll()
+        self.store.habits.removeAll()
         self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
         ///Кнопка  выбора времени для новой привычки.
         @IBAction func datePickerFormatter(_ sender: UIDatePicker) {
            let date = sender.date
     print(date)
-            
+        ///Выбор формата времени Часы:Минуты
           let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
             currentTimeStackLabel.text = formatter.string(from: date)
-   
         }
+    
         ///Кнопка выбора цвета для новой привычки.
         @IBAction func changedColorButtonPressed(_ sender: UIButton) {
             selectColor()
@@ -72,28 +77,26 @@ class EditHabbitViewController: UIViewController {
         @IBAction func cancelBarButtonPressed(_ sender: UIBarButtonItem) {
             self.dismiss(animated: true, completion: nil)
         }
+    
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-                /// create the alert
-        let alert = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \(nameLabel!)?", preferredStyle: UIAlertController.Style.alert)
-        
-                // add the actions (buttons)
+                /// Create the alert
+        let alert = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \(nameLabel.text)?", preferredStyle: UIAlertController.Style.alert)
+                /// add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Удалить", style: UIAlertAction.Style.destructive, handler: { action in
             self.delete()
         }))
-        
-        
+                ///Cancel button
                 alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil))
-        
-                // show the alert
+                /// show the alert
                 self.present(alert, animated: true, completion: nil)
             }
-    
     }
 
 
 
 
-    //MARK: - Extension UITextFieldDelegate
+    //MARK: - Extension + UITextFieldDelegate
     extension EditHabbitViewController: UITextFieldDelegate {
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
          hidekeyboard()
@@ -103,7 +106,7 @@ class EditHabbitViewController: UIViewController {
             textField.resignFirstResponder()
                 
             }
-                }
+            }
 
     extension EditHabbitViewController: UIColorPickerViewControllerDelegate {
         func selectColor() {

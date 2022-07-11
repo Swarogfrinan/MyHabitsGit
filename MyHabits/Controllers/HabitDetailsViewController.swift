@@ -11,40 +11,48 @@ import UIKit
 
 class HabitDetailsViewController: UIViewController {
     
+    //MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var emoji: UILabel!
     @IBOutlet weak var habitName: UILabel!
     @IBOutlet weak var numDays: UILabel!
     @IBOutlet weak var streak: UILabel!
+    
+    //MARK: - Let/var
     var store = HabitsStore.shared
     var storeDetail = HabitsStore.shared.dates
     var habit: Habit?
     var dates: [String] = []
 //    var streak = 0
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        ///подписка на делегаты tableView
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    ///Взятие данных привычки из Habit.
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         emoji.text = habit?.emoji
         habitName.text = habit?.name
         numDays.text = habit?.dateString
         streak.text = habit?.streak.description
-      
     }
-    ///navigation to Ediit Habit VC
+    //MARK: - Methods
+    ///Navigation to EditHabbitViewController
     @IBAction func editBarButtonPressed(_ sender: UIBarButtonItem, indexPath: IndexPath) {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditHabbitViewController") as? EditHabbitViewController else
         { return }
         self.performSegue(withIdentifier: "EditHabbitViewController", sender: store.habits[indexPath.item])
         self.present(controller, animated: true, completion: nil)
     }
+    
+    ///stepper daystreak
     @IBAction func step(_ sender: UIStepper) {
         let val = Int(sender.value)
-        
         if val >= 0 {
             let current = Date()
             let currentDateString = getDateString(date: current)
@@ -60,32 +68,31 @@ class HabitDetailsViewController: UIViewController {
             
             if dates.count == 0 {
                 numDays.text = "Total Days: \(val)"
-                
                 let newVal = habit!.streak + 1
                 habit!.streak = newVal
                 streak.text = "\(newVal) Day Streak!"
                 // add new date to days tracked
                 dates.insert(currentDateString, at: 0)
+                
             } else {
-                       
                 // increase total days if current day is not the same as last day tracked
                 if currentDateString != dates[0] {
                     numDays.text = "Total Days: \(val)"
                     // add new date to days tracked
                     dates.insert(currentDateString, at: 0)
                 }
-                
                 // increase streak if last tracked date was yesterday
                 if oldDateString == dates[0] {
                     let newVal = habit!.streak + 1
                     habit!.streak = newVal
                     streak.text = "\(newVal) Day Streak!"
-                    
+                    ///change color streak.button to complete-green color,
                     if newVal >= 10 {
                         streak.backgroundColor = UIColor.green
                     }
                 }
             }
+            ///reload date tableView.
             self.tableView.reloadData()
         }
 }
@@ -109,11 +116,11 @@ extension HabitDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+    ///высота ячейки
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
-    
+    ///Возвращаем дату выполнения привычки.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dates.count
     }
@@ -142,7 +149,7 @@ if segue.identifier == "EditHabbitViewController" {
 }
 }
 }
-
+//MARK: - Extension
 extension HabitDetailsViewController : EditHabitViewControllerDelegate {
     func saveEditHabit(_ habit: Habit) {
         store.save()
