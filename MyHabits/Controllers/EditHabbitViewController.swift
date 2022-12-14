@@ -17,7 +17,7 @@ class EditHabbitViewController: UIViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     ///bot screen IBOutlet
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: EmojiTextField!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
@@ -34,9 +34,7 @@ class EditHabbitViewController: UIViewController {
         super.viewDidLoad()
         ///Уменьшение тайтла при прокрутке скрина.
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        colorButton.layer.cornerRadius = colorButton.frame.size.height / 2
-        nameLabel.text = habit?.name
+        setupTitles()
     }
     
     //MARK: - IBAction methods
@@ -92,6 +90,11 @@ class EditHabbitViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
     }
+    
+    private func setupTitles() {
+        colorButton.layer.cornerRadius = colorButton.frame.size.height / 2
+        nameLabel.text = habit?.name
+    }
 }
 
 
@@ -108,6 +111,8 @@ extension EditHabbitViewController: UITextFieldDelegate {
     func hidekeyboard() {
         textField.resignFirstResponder()
     }
+    
+    
 }
 
 //MARK: -  UIColorPickerViewControllerDelegate
@@ -126,6 +131,7 @@ extension EditHabbitViewController: UIColorPickerViewControllerDelegate {
 }
 
 //MARK: -  UIPickerViewDelegate
+
 extension EditHabbitViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     }

@@ -25,6 +25,7 @@
 		43BAE8A22833A92C003E852F /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BAE8A12833A92C003E852F /* CheckMark.swift */; };
 		43DA4A562843BC4F0001DAC3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA4A552843BC4F0001DAC3 /* TableViewCell.swift */; };
 		43EDE4BD28393E1500F66456 /* LaunchHabbitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDE4BC28393E1500F66456 /* LaunchHabbitViewController.swift */; };
+		43FB6834294A86C9006A42DE /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FB6833294A86C9006A42DE /* EmojiTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		43BAE8A12833A92C003E852F /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
 		43DA4A552843BC4F0001DAC3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		43EDE4BC28393E1500F66456 /* LaunchHabbitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchHabbitViewController.swift; sourceTree = "<group>"; };
+		43FB6833294A86C9006A42DE /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				439E2F3E282E759900298F2E /* HabitsStore.swift */,
+				43FB6835294A86D5006A42DE /* Extension */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +136,14 @@
 				43B454BB28328F3F006354FD /* UIView+Extension.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		43FB6835294A86D5006A42DE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				43FB6833294A86C9006A42DE /* EmojiTextField.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				439E2F43282E7C5300298F2E /* InfoViewController.swift in Sources */,
 				43B454B728323CDF006354FD /* ProgressCollectionViewCell.swift in Sources */,
 				43BAE8A22833A92C003E852F /* CheckMark.swift in Sources */,
+				43FB6834294A86C9006A42DE /* EmojiTextField.swift in Sources */,
 				43B454BC28328F3F006354FD /* UIView+Extension.swift in Sources */,
 				43EDE4BD28393E1500F66456 /* LaunchHabbitViewController.swift in Sources */,
 				439E2F2D282E6B9D00298F2E /* SceneDelegate.swift in Sources */,
