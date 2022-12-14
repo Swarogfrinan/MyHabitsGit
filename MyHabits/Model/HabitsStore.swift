@@ -175,8 +175,9 @@ public final class HabitsStore {
         guard index < dates.count else {
             return nil
         }
-        return dateFormatter.string(from: dates[index])
         print("Произошел возврат даты 174 строчка.")
+        return dateFormatter.string(from: dates[index])
+       
     }
     
     /// Показывает, была ли затрекана привычка в переданную дату.
