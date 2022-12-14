@@ -1,17 +1,9 @@
-//
-//  HabitDetailsViewController.swift
-//  MyHabits
-//
-//  Created by Ilya Vasilev on 18.05.2022.
-//
-
 import UIKit
-
-
 
 class HabitDetailsViewController: UIViewController {
     
     //MARK: - IBOutlet
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var emoji: UILabel!
@@ -19,19 +11,25 @@ class HabitDetailsViewController: UIViewController {
     @IBOutlet weak var numDays: UILabel!
     @IBOutlet weak var streak: UILabel!
     
-    //MARK: - Let/var
+    //MARK: - Property
+    
     var store = HabitsStore.shared
     var storeDetail = HabitsStore.shared.dates
     var habit: Habit?
     var dates: [String] = []
-//    var streak = 0
-    //MARK: - Lifecycle
+    //    var streak = 0
+    
+    //MARK: - viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ///подписка на делегаты tableView
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    
+    //MARK: - viewDidAppear
+    
     ///Взятие данных привычки из Habit.
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,7 +39,9 @@ class HabitDetailsViewController: UIViewController {
         numDays.text = habit?.dateString
         streak.text = habit?.streak.description
     }
-    //MARK: - Methods
+    
+    //MARK: - IBAction Method
+    
     ///Navigation to EditHabbitViewController
     @IBAction func editBarButtonPressed(_ sender: UIBarButtonItem, indexPath: IndexPath) {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditHabbitViewController") as? EditHabbitViewController else
@@ -95,22 +95,24 @@ class HabitDetailsViewController: UIViewController {
             ///reload date tableView.
             self.tableView.reloadData()
         }
-}
-}
-
-///stepper
-    func getDateString(date: Date) -> String {
-        let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let dateString = dateFormatter.string(from: date)
-        
-        return dateString
     }
+}
+
+//MARK: -  Method
+
+func getDateString(date: Date) -> String {
+    let dateFormatter : DateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    let dateString = dateFormatter.string(from: date)
+    
+    return dateString
+}
 
 
 
-//MARK: - Extension Table Delegate, Table DataSource
-extension HabitDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+//MARK: - UITableViewDataSource
+
+extension HabitDetailsViewController:  UITableViewDataSource {
     
     // table view methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,35 +126,43 @@ extension HabitDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dates.count
     }
+}
+
+//MARK: - UITableViewDelegate
+
+extension HabitDetailsViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath)
         cell.textLabel!.text = dates[indexPath.row]
         return cell
     }
-   
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                dates.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }
-
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-if segue.identifier == "EditHabbitViewController" {
-    if let habitInfo = sender as? Habit {
-        if let editVC = segue.destination as? EditHabbitViewController {
-            editVC.delegate = self
-            editVC.habit = habitInfo
+        if editingStyle == .delete {
+            dates.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "EditHabbitViewController" {
+//            if let habitInfo = sender as? Habit {
+//                if let editVC = segue.destination as? EditHabbitViewController {
+//                    editVC.delegate = self
+//                    editVC.habit = habitInfo
+//                }
+//            }
+//        }
+//    }
 }
-}
-}
-//MARK: - Extension
+
+//MARK: - Delegate
+
 extension HabitDetailsViewController : EditHabitViewControllerDelegate {
+    
     func saveEditHabit(_ habit: Habit) {
         store.save()
     }
 }
-    
+

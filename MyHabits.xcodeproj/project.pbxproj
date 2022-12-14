@@ -12,7 +12,6 @@
 		4341600D283507E200973F1B /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341600C283507E200973F1B /* DetailsTableViewCell.swift */; };
 		439E2F2B282E6B9D00298F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439E2F2A282E6B9D00298F2E /* AppDelegate.swift */; };
 		439E2F2D282E6B9D00298F2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439E2F2C282E6B9D00298F2E /* SceneDelegate.swift */; };
-		439E2F2F282E6B9D00298F2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439E2F2E282E6B9D00298F2E /* ViewController.swift */; };
 		439E2F32282E6B9D00298F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439E2F30282E6B9D00298F2E /* Main.storyboard */; };
 		439E2F34282E6BA500298F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439E2F33282E6BA500298F2E /* Assets.xcassets */; };
 		439E2F37282E6BA500298F2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439E2F35282E6BA500298F2E /* LaunchScreen.storyboard */; };
@@ -35,7 +34,6 @@
 		439E2F27282E6B9D00298F2E /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439E2F2A282E6B9D00298F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		439E2F2C282E6B9D00298F2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		439E2F2E282E6B9D00298F2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		439E2F31282E6B9D00298F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		439E2F33282E6BA500298F2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		439E2F36282E6BA500298F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		439E2F48282E8EED00298F2E /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				439E2F2E282E6B9D00298F2E /* ViewController.swift */,
 				439E2F2C282E6B9D00298F2E /* SceneDelegate.swift */,
 				439E2F2A282E6B9D00298F2E /* AppDelegate.swift */,
 			);
@@ -215,7 +212,6 @@
 				439E2F45282E7C9B00298F2E /* HabitsViewController.swift in Sources */,
 				43B454B928323CED006354FD /* HabitCollectionViewCell.swift in Sources */,
 				439E2F4A282E9D1000298F2E /* AddHabitViewController.swift in Sources */,
-				439E2F2F282E6B9D00298F2E /* ViewController.swift in Sources */,
 				4341600D283507E200973F1B /* DetailsTableViewCell.swift in Sources */,
 				434160092834ECBA00973F1B /* EditHabbitViewController.swift in Sources */,
 				439E2F2B282E6B9D00298F2E /* AppDelegate.swift in Sources */,
