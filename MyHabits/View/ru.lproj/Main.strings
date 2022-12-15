@@ -1,0 +1,126 @@
+
+/* Class = "UITextField"; placeholder = "Давай кое-что подкорректируем"; ObjectID = "3JH-fW-xDE"; */
+"3JH-fW-xDE.placeholder" = "Давай кое-что подкорректируем";
+
+/* Class = "UILabel"; text = "11:00 PM"; ObjectID = "3SV-A0-OiJ"; */
+"3SV-A0-OiJ.text" = "11:00 PM";
+
+/* Class = "UILabel"; text = "0 Day Streak!"; ObjectID = "53i-G7-r1T"; */
+"53i-G7-r1T.text" = "0 Day Streak!";
+
+/* Class = "UILabel"; text = "Эмоджи"; ObjectID = "5Gs-QC-Aph"; */
+"5Gs-QC-Aph.text" = "Эмоджи";
+
+/* Class = "UINavigationItem"; title = "Создать"; ObjectID = "63e-dw-w0J"; */
+"63e-dw-w0J.title" = "Создать";
+
+/* Class = "UILabel"; text = "📝"; ObjectID = "Gvj-VO-fRX"; */
+"Gvj-VO-fRX.text" = "📝";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "HXg-LA-Z8d"; */
+"HXg-LA-Z8d.text" = "Title";
+
+/* Class = "UILabel"; text = "Цвет"; ObjectID = "Isk-6h-NN3"; */
+"Isk-6h-NN3.text" = "Цвет";
+
+/* Class = "UIButton"; normalTitle = "Удалить привычку"; ObjectID = "L2b-sE-QkZ"; */
+"L2b-sE-QkZ.normalTitle" = "Удалить привычку";
+
+/* Class = "UILabel"; text = "Счётчик: 0"; ObjectID = "MdO-uK-TIo"; */
+"MdO-uK-TIo.text" = "Счётчик: 0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "N1V-um-L27"; */
+"N1V-um-L27.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Цвет"; ObjectID = "O0K-sG-XnJ"; */
+"O0K-sG-XnJ.text" = "Цвет";
+
+/* Class = "UITextField"; placeholder = "📋"; ObjectID = "PDy-R1-yII"; */
+"PDy-R1-yII.placeholder" = "📋";
+
+/* Class = "UIBarButtonItem"; title = "Править"; ObjectID = "Q9r-ii-UKl"; */
+"Q9r-ii-UKl.title" = "Править";
+
+/* Class = "UILabel"; text = "Выпить стакан воды"; ObjectID = "Qwj-a6-uaa"; */
+"Qwj-a6-uaa.text" = "Выпить стакан воды";
+
+/* Class = "UINavigationItem"; title = "Info"; ObjectID = "RYw-zD-4he"; */
+"RYw-zD-4he.title" = "Info";
+
+/* Class = "UINavigationItem"; title = "Сегодня"; ObjectID = "Rfl-Z2-f10"; */
+"Rfl-Z2-f10.title" = "Сегодня";
+
+/* Class = "UITabBarItem"; title = "Habits"; ObjectID = "RoS-Qw-XsC"; */
+"RoS-Qw-XsC.title" = "Habits";
+
+/* Class = "UIBarButtonItem"; title = "Отменить"; ObjectID = "TGI-AW-wh0"; */
+"TGI-AW-wh0.title" = "Отменить";
+
+/* Class = "UILabel"; text = "Каждый день в "; ObjectID = "U1F-2j-DJJ"; */
+"U1F-2j-DJJ.text" = "Каждый день в ";
+
+/* Class = "UILabel"; text = "Всё получится!"; ObjectID = "UW3-MH-uNf"; */
+"UW3-MH-uNf.text" = "Всё получится!";
+
+/* Class = "UITextField"; placeholder = "Давай кое-что подкорректируем"; ObjectID = "Vg0-ol-Du2"; */
+"Vg0-ol-Du2.placeholder" = "Давай кое-что подкорректируем";
+
+/* Class = "UILabel"; text = "Название"; ObjectID = "YnH-GW-ICU"; */
+"YnH-GW-ICU.text" = "Название";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "Zsy-2V-cc3"; */
+"Zsy-2V-cc3.title" = "Сохранить";
+
+/* Class = "UIBarButtonItem"; title = "Отменить"; ObjectID = "cXn-gc-PJh"; */
+"cXn-gc-PJh.title" = "Отменить";
+
+/* Class = "UILabel"; text = "Days Tracked"; ObjectID = "crn-5N-DpD"; */
+"crn-5N-DpD.text" = "Days Tracked";
+
+/* Class = "UILabel"; text = "Total Days: 0"; ObjectID = "eJK-UQ-xnh"; */
+"eJK-UQ-xnh.text" = "Total Days: 0";
+
+/* Class = "UILabel"; text = "11:00 PM"; ObjectID = "fuL-Jz-XD1"; */
+"fuL-Jz-XD1.text" = "11:00 PM";
+
+/* Class = "UITabBarItem"; title = "Info"; ObjectID = "g4J-gh-1B7"; */
+"g4J-gh-1B7.title" = "Info";
+
+/* Class = "UILabel"; text = "Эмоджи"; ObjectID = "gGm-Bd-Kwi"; */
+"gGm-Bd-Kwi.text" = "Эмоджи";
+
+/* Class = "UITextField"; placeholder = "📋"; ObjectID = "hZr-MB-ZgX"; */
+"hZr-MB-ZgX.placeholder" = "📋";
+
+/* Class = "UILabel"; text = "HABIT NAME"; ObjectID = "hgB-bc-yPh"; */
+"hgB-bc-yPh.text" = "HABIT NAME";
+
+/* Class = "UILabel"; text = "emoji"; ObjectID = "jIf-Ql-cmD"; */
+"jIf-Ql-cmD.text" = "emoji";
+
+/* Class = "UILabel"; text = "Каждый день в  7:30"; ObjectID = "lqt-bW-mL8"; */
+"lqt-bW-mL8.text" = "Каждый день в  7:30";
+
+/* Class = "UILabel"; text = "Каждый день в "; ObjectID = "lrc-T5-Q3J"; */
+"lrc-T5-Q3J.text" = "Каждый день в ";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "nDm-87-sZL"; */
+"nDm-87-sZL.title" = "Сохранить";
+
+/* Class = "UITextView"; text = "Standard User Habit Description"; ObjectID = "p1s-pr-RKc"; */
+"p1s-pr-RKc.text" = "Standard User Habit Description";
+
+/* Class = "UILabel"; text = "Название"; ObjectID = "phA-VH-CR7"; */
+"phA-VH-CR7.text" = "Название";
+
+/* Class = "UINavigationItem"; title = "Изменить"; ObjectID = "q4n-Ij-Wwd"; */
+"q4n-Ij-Wwd.title" = "Изменить";
+
+/* Class = "UILabel"; text = "50%"; ObjectID = "tSW-6m-k82"; */
+"tSW-6m-k82.text" = "50%";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xf0-k4-NLj"; */
+"xf0-k4-NLj.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Описание вашей  новой крутой привычки!"; ObjectID = "zsl-AQ-nR9"; */
+"zsl-AQ-nR9.text" = "Описание вашей  новой крутой привычки!";
