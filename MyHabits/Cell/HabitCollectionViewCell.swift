@@ -1,10 +1,3 @@
-//
-//  HabitCollectionViewCell.swift
-//  MyHabits
-//
-//  Created by Ilya Vasilev on 16.05.2022.
-//
-
 import UIKit
 
 class HabitCollectionViewCell: UICollectionViewCell {
@@ -16,6 +9,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     var dates: [String] = []
     
     //MARK: - IBOutlet
+    
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var dailyTimeTaskLabel: UILabel!
@@ -29,13 +23,13 @@ class HabitCollectionViewCell: UICollectionViewCell {
         clipsToBounds = true
         layer.cornerRadius = 4
         
-        setupView()
+        setupCircleView()
         setupGesture()
     }
     
     //MARK: - Methods
-    func setupView() {
-        ///Устанавливаем цвет кругую
+    func setupCircleView() {
+        ///Устанавливаем цвет кругу.
         if circleView.layer.borderColor != UIColor.white.cgColor {
         circleView.layer.borderColor = habit?.color.cgColor
         } else {
@@ -58,6 +52,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         UIView.animate(withDuration: 0.3) { [self] in
             ///setup success check-mark in centre circleView
             emojiLabel.text = "✓"
+            emojiLabel.textColor = .white
             ///if white habit-color choosed.
             ///
 //            if circleView.layer.borderColor != UIColor.white.cgColor {
@@ -79,6 +74,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
   
 
     //MARK: - Gesture
+    
         @objc private func tapCircleAction(gesture: UITapGestureRecognizer) {
          
             UIView.animate(withDuration: 0.3) {

@@ -129,15 +129,22 @@ extension HabitsViewController: UICollectionViewDataSource {
         
         if let name = cell.viewWithTag(1) as? UILabel {
             name.text = habit.name
+            name.textColor = habit.color
         }
         
-        if let emoji = cell.viewWithTag(2) as? UILabel {
+        if let date = cell.viewWithTag(2) as? UILabel {
+            date.text = habit.dateString
+        }
+        
+        if let streak = cell.viewWithTag(3) as? UILabel {
+            streak.text = "Day Streak : \(habit.streak.description)"
+        }
+        
+        if let emoji = cell.viewWithTag(4) as? UILabel {
             emoji.text = habit.emoji
         }
-        if let dateString = cell.viewWithTag(3) as? UILabel {
-            dateString.text = habit.dateString
-        }
-        if let color = cell.viewWithTag(4) {
+        
+        if let color = cell.viewWithTag(5) {
             color.layer.borderColor = habit.color.cgColor
         }
         
