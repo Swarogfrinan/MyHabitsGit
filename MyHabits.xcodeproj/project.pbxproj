@@ -10,6 +10,7 @@
 		434160092834ECBA00973F1B /* EditHabbitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434160082834ECBA00973F1B /* EditHabbitViewController.swift */; };
 		4341600B2834FCD500973F1B /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341600A2834FCD500973F1B /* HabitDetailsViewController.swift */; };
 		4341600D283507E200973F1B /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4341600C283507E200973F1B /* DetailsTableViewCell.swift */; };
+		437D6DFC294AB07700BF51E3 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437D6DFB294AB07600BF51E3 /* ProgressBar.swift */; };
 		439E2F2B282E6B9D00298F2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439E2F2A282E6B9D00298F2E /* AppDelegate.swift */; };
 		439E2F2D282E6B9D00298F2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439E2F2C282E6B9D00298F2E /* SceneDelegate.swift */; };
 		439E2F32282E6B9D00298F2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439E2F30282E6B9D00298F2E /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		434160082834ECBA00973F1B /* EditHabbitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabbitViewController.swift; sourceTree = "<group>"; };
 		4341600A2834FCD500973F1B /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		4341600C283507E200973F1B /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		437D6DFB294AB07600BF51E3 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		439E2F27282E6B9D00298F2E /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439E2F2A282E6B9D00298F2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		439E2F2C282E6B9D00298F2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				43BAE8A12833A92C003E852F /* CheckMark.swift */,
 				43FB6833294A86C9006A42DE /* EmojiTextField.swift */,
+				437D6DFB294AB07600BF51E3 /* ProgressBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				439E2F45282E7C9B00298F2E /* HabitsViewController.swift in Sources */,
 				43B454B928323CED006354FD /* HabitCollectionViewCell.swift in Sources */,
 				439E2F4A282E9D1000298F2E /* AddHabitViewController.swift in Sources */,
+				437D6DFC294AB07700BF51E3 /* ProgressBar.swift in Sources */,
 				4341600D283507E200973F1B /* DetailsTableViewCell.swift in Sources */,
 				434160092834ECBA00973F1B /* EditHabbitViewController.swift in Sources */,
 				439E2F2B282E6B9D00298F2E /* AppDelegate.swift in Sources */,

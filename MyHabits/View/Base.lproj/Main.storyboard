@@ -190,35 +190,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" progress="0.29999999999999999" id="DGB-Ql-CMP">
-                                            <rect key="frame" x="27" y="33" width="360" height="4"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="tintColor" red="0.62979406120000003" green="0.084882698950000002" blue="0.79932719470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Всё получится!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-MH-uNf">
-                                            <rect key="frame" x="27" y="8" width="230" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="28" y="9" width="140" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" white="0.41999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSW-6m-k82">
-                                            <rect key="frame" x="323" y="8" width="64" height="20.5"/>
+                                            <rect key="frame" x="322" y="9" width="64" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="64" id="KJw-ql-Fv3"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.55696821210000003" green="0.55672085289999995" blue="0.57797837259999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" progress="0.29999999999999999" id="DGB-Ql-CMP" customClass="ProgressBar" customModule="MyHabits" customModuleProvider="target">
+                                            <rect key="frame" x="27" y="48" width="360" height="4"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" red="0.62979406120000003" green="0.084882698950000002" blue="0.79932719470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </progressView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="tSW-6m-k82" firstAttribute="trailing" secondItem="DGB-Ql-CMP" secondAttribute="trailing" id="7fL-eB-ves"/>
-                                        <constraint firstItem="UW3-MH-uNf" firstAttribute="leading" secondItem="DGB-Ql-CMP" secondAttribute="leading" id="Jyl-NH-JBZ"/>
-                                        <constraint firstItem="UW3-MH-uNf" firstAttribute="baseline" secondItem="tSW-6m-k82" secondAttribute="baseline" id="hJW-g5-qdA"/>
-                                        <constraint firstItem="tSW-6m-k82" firstAttribute="leading" secondItem="UW3-MH-uNf" secondAttribute="trailing" constant="66" id="oqw-UX-Afn"/>
-                                        <constraint firstItem="UW3-MH-uNf" firstAttribute="top" secondItem="dNw-dG-YRK" secondAttribute="topMargin" id="sXy-v6-4UP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tSW-6m-k82" secondAttribute="trailing" constant="20" id="CiG-R0-Knc"/>
+                                        <constraint firstItem="UW3-MH-uNf" firstAttribute="leading" secondItem="dNw-dG-YRK" secondAttribute="leadingMargin" constant="20" id="QHX-mt-gZ3"/>
+                                        <constraint firstItem="DGB-Ql-CMP" firstAttribute="top" secondItem="UW3-MH-uNf" secondAttribute="bottom" constant="15" id="ZNE-YZ-tnW"/>
+                                        <constraint firstItem="DGB-Ql-CMP" firstAttribute="top" secondItem="tSW-6m-k82" secondAttribute="bottom" constant="15" id="mBZ-qI-Aw4"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="percentLabel" destination="tSW-6m-k82" id="xfT-Gh-WCQ"/>
