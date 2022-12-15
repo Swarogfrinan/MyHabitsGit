@@ -45,7 +45,7 @@ class HabitDetailsViewController: UIViewController {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditHabbitViewController") as? EditHabbitViewController else
         { return }
         self.performSegue(withIdentifier: "EditHabbitViewController", sender: store.habits[indexPath.item])
-        controller.textField?.text = habit?.emoji
+        controller.textField?.text = habit?.name
         self.present(controller, animated: true, completion: nil)
     }
     

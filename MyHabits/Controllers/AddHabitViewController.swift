@@ -47,14 +47,16 @@ class AddHabitViewController: UIViewController {
     
 ///Кнопка сохранения  новой привычки в список привычек
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        
         let newHabit =
-        Habit(name: textField.text!.capitalized, emoji: emojiField.text!,
+        Habit(name: textField.text?.capitalized ?? "No habbit name", emoji: emojiField.text ?? "☻",
                   date: datePicker.date, trackDates: date, streak: 0,
-                 color: colorButton.backgroundColor!)
+              color: colorButton.backgroundColor ?? .orange )
         let store = HabitsStore.shared
+        
         store.habits.append(newHabit)
         store.save()
-        print("67 строка Habit. Создаём новую привычку \(String(describing: newHabit.name)), добавляем её в стораж привычек.")
+      
         dismiss(animated: true, completion: nil)
     }
     

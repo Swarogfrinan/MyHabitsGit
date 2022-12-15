@@ -848,6 +848,7 @@
                         <outlet property="datePicker" destination="bZJ-lL-fmu" id="nlJ-0O-f3q"/>
                         <outlet property="dateStackLabel" destination="U1F-2j-DJJ" id="4RE-M1-OrV"/>
                         <outlet property="deleteButton" destination="L2b-sE-QkZ" id="dUH-ge-eDO"/>
+                        <outlet property="emojiTextField" destination="hZr-MB-ZgX" id="7aB-ND-4Z0"/>
                         <outlet property="nameLabel" destination="phA-VH-CR7" id="8RQ-Ls-eh6"/>
                         <outlet property="saveButton" destination="Zsy-2V-cc3" id="e9A-w1-7dy"/>
                         <outlet property="textField" destination="Vg0-ol-Du2" id="W0D-8p-kHj"/>

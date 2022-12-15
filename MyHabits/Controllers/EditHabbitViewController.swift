@@ -7,9 +7,19 @@ protocol EditHabitViewControllerDelegate: AnyObject {
 
 class EditHabbitViewController: UIViewController {
     
-    //MARK: - let/var
+    //MARK: - Property
     let store = HabitsStore.shared
-    var habit: Habit?
+    var habit: Habit? {
+        
+        didSet {
+            
+            textField.text = habit?.name
+            textField.textColor = habit?.color
+            emojiTextField.text = habit?.emoji
+            colorButton.backgroundColor = habit?.color
+            datePicker.date = habit?.date ?? Date()
+        }
+    }
     
     //MARK: - IBOutlets
     ///navigation bar - buttons
@@ -17,7 +27,9 @@ class EditHabbitViewController: UIViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     ///bot screen IBOutlet
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var textField: EmojiTextField!
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var emojiTextField: EmojiTextField!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var colorButton: UIButton!
     ///top screen IBOutlet
@@ -56,7 +68,21 @@ class EditHabbitViewController: UIViewController {
     
     ///Кнопка сохранения  новой привычки
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        delegate?.saveEditHabit(habit!)
+//        delegate?.saveEditHabit(habit!)
+        let newHabit = Habit(name: textField.text ?? "No habbit name", emoji: emojiTextField.text ?? ":)", date: datePicker.date, streak: 0, color: colorButton.backgroundColor ?? .orange )
+        
+        for (index, storageHabit) in store.habits.enumerated() {
+           if storageHabit.name == habit?.name {
+                newHabit.emoji = storageHabit.emoji
+                newHabit.color = storageHabit.color
+                newHabit.trackDates = storageHabit.trackDates
+                newHabit.streak = storageHabit.streak
+                
+                store.habits[index] = newHabit
+                habit? = newHabit
+            }
+        }
+        
         dismiss(animated: true)
     }
     
@@ -67,16 +93,7 @@ class EditHabbitViewController: UIViewController {
     
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        /// Create the alert
-        let alert = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \(nameLabel.text)?", preferredStyle: UIAlertController.Style.alert)
-        /// add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Удалить", style: UIAlertAction.Style.destructive, handler: { action in
-            self.delete()
-        }))
-        ///Cancel button
-        alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertAction.Style.cancel, handler: nil))
-        /// show the alert
-        self.present(alert, animated: true, completion: nil)
+       showAlert()
     }
     
     
@@ -88,6 +105,29 @@ class EditHabbitViewController: UIViewController {
         self.store.habits.removeAll()
         self.dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func showAlert() {
+      
+        let alert = UIAlertController(title: "Removing habit", message: "Do you want to remove habit \(String(describing: nameLabel.text))?", preferredStyle: .alert)
+     
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {_ in
+            for (index, storageHabit) in self.store.habits.enumerated() {
+                if storageHabit.name == self.habit?.name {
+                    self.habit?.trackDates.remove(at: index)
+                    self.store.habits.remove(at: index)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4 , execute: {
+                        self.navigationController?.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
+                        let vc = HabitsViewController()
+                        self.navigationController?.popToViewController(vc, animated: true)
+                    })
+                }
+            }
+        }))
+     
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func setupTitles() {
