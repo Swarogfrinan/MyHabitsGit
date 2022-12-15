@@ -1,10 +1,3 @@
-//
-//  CheckMark.swift
-//  MyHabits
-//
-//  Created by Ilya Vasilev on 17.05.2022.
-//
-
 import UIKit
 import Foundation
 

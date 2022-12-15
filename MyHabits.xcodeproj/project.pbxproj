@@ -24,7 +24,6 @@
 		43B454BC28328F3F006354FD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B454BB28328F3F006354FD /* UIView+Extension.swift */; };
 		43BAE8A22833A92C003E852F /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BAE8A12833A92C003E852F /* CheckMark.swift */; };
 		43DA4A562843BC4F0001DAC3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA4A552843BC4F0001DAC3 /* TableViewCell.swift */; };
-		43EDE4BD28393E1500F66456 /* LaunchHabbitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDE4BC28393E1500F66456 /* LaunchHabbitViewController.swift */; };
 		43FB6834294A86C9006A42DE /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FB6833294A86C9006A42DE /* EmojiTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		43B454BB28328F3F006354FD /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		43BAE8A12833A92C003E852F /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
 		43DA4A552843BC4F0001DAC3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		43EDE4BC28393E1500F66456 /* LaunchHabbitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchHabbitViewController.swift; sourceTree = "<group>"; };
 		43FB6833294A86C9006A42DE /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		437D6DFA294AAE5500BF51E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				439E2F35282E6BA500298F2E /* LaunchScreen.storyboard */,
+				439E2F30282E6B9D00298F2E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		439E2F1E282E6B9D00298F2E = {
 			isa = PBXGroup;
 			children = (
@@ -82,14 +89,12 @@
 		439E2F29282E6B9D00298F2E /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
-				43EDE4BC28393E1500F66456 /* LaunchHabbitViewController.swift */,
-				43BAE8A12833A92C003E852F /* CheckMark.swift */,
-				439E2F48282E8EED00298F2E /* SupportingFiles */,
 				43B454BA28324048006354FD /* Cell */,
 				439E2F47282E8EE100298F2E /* Model */,
+				43FB6835294A86D5006A42DE /* Extension */,
 				439E2F46282E8EC500298F2E /* Controllers */,
-				439E2F33282E6BA500298F2E /* Assets.xcassets */,
-				439E2F35282E6BA500298F2E /* LaunchScreen.storyboard */,
+				439E2F48282E8EED00298F2E /* Resources */,
+				437D6DFA294AAE5500BF51E3 /* View */,
 				439E2F38282E6BA500298F2E /* Info.plist */,
 			);
 			path = MyHabits;
@@ -103,7 +108,6 @@
 				4341600A2834FCD500973F1B /* HabitDetailsViewController.swift */,
 				434160082834ECBA00973F1B /* EditHabbitViewController.swift */,
 				439E2F42282E7C5300298F2E /* InfoViewController.swift */,
-				439E2F30282E6B9D00298F2E /* Main.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,18 +116,18 @@
 			isa = PBXGroup;
 			children = (
 				439E2F3E282E759900298F2E /* HabitsStore.swift */,
-				43FB6835294A86D5006A42DE /* Extension */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		439E2F48282E8EED00298F2E /* SupportingFiles */ = {
+		439E2F48282E8EED00298F2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				439E2F2C282E6B9D00298F2E /* SceneDelegate.swift */,
 				439E2F2A282E6B9D00298F2E /* AppDelegate.swift */,
+				439E2F33282E6BA500298F2E /* Assets.xcassets */,
 			);
-			path = SupportingFiles;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		43B454BA28324048006354FD /* Cell */ = {
@@ -141,6 +145,7 @@
 		43FB6835294A86D5006A42DE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				43BAE8A12833A92C003E852F /* CheckMark.swift */,
 				43FB6833294A86C9006A42DE /* EmojiTextField.swift */,
 			);
 			path = Extension;
@@ -231,7 +236,6 @@
 				43BAE8A22833A92C003E852F /* CheckMark.swift in Sources */,
 				43FB6834294A86C9006A42DE /* EmojiTextField.swift in Sources */,
 				43B454BC28328F3F006354FD /* UIView+Extension.swift in Sources */,
-				43EDE4BD28393E1500F66456 /* LaunchHabbitViewController.swift in Sources */,
 				439E2F2D282E6B9D00298F2E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
