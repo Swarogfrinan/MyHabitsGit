@@ -145,16 +145,16 @@ extension HabitDetailsViewController:  UITableViewDelegate {
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "EditHabbitViewController" {
-//            if let habitInfo = sender as? Habit {
-//                if let editVC = segue.destination as? EditHabbitViewController {
-//                    editVC.delegate = self
-//                    editVC.habit = habitInfo
-//                }
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditHabbitViewController" {
+            if let habitInfo = sender as? Habit {
+                if let editVC = segue.destination as? EditHabbitViewController {
+                    editVC.delegate = self
+                    editVC.habit = habitInfo
+                }
+            }
+        }
+    }
 }
 
 //MARK: - Delegate

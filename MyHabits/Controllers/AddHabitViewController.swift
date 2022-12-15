@@ -1,9 +1,3 @@
-//
-//  HabitViewController.swift
-//  MyHabits
-//
-//  Created by Ilya Vasilev on 13.05.2022.
-//
 
 import UIKit
 ///Делегат создания новой привычки
@@ -15,14 +9,11 @@ protocol AddHabitDelegate: AnyObject {
 class AddHabitViewController: UIViewController {
     
 //MARK: - IBOutlet
-    @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var emojiField: UITextField!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var colorButton: UIButton!
-    @IBOutlet weak var changeColorButton: UIButton!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dateStackLabel: UILabel!
     @IBOutlet weak var currentTimeStackLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!

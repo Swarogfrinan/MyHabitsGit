@@ -20,7 +20,6 @@ class EditHabbitViewController: UIViewController {
     @IBOutlet weak var textField: EmojiTextField!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var colorButton: UIButton!
-    @IBOutlet weak var timeLabel: UILabel!
     ///top screen IBOutlet
     @IBOutlet weak var dateStackLabel: UILabel!
     @IBOutlet weak var currentTimeStackLabel: UILabel!
