@@ -6,10 +6,10 @@ class HabitDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
-    @IBOutlet weak var emoji: UILabel!
-    @IBOutlet weak var habitName: UILabel!
-    @IBOutlet weak var numDays: UILabel!
-    @IBOutlet weak var streak: UILabel!
+    @IBOutlet weak var emojiLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dayCounterLabel: UILabel!
+    @IBOutlet weak var streakLabel: UILabel!
     
     //MARK: - Property
     
@@ -23,9 +23,7 @@ class HabitDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        setupDelegate()
     }
     
     //MARK: - viewDidAppear
@@ -34,10 +32,10 @@ class HabitDetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        emoji.text = habit?.emoji
-        habitName.text = habit?.name
-        numDays.text = habit?.dateString
-        streak.text = habit?.streak.description
+        emojiLabel.text = habit?.emoji
+        titleLabel.text = habit?.name
+        dayCounterLabel.text = habit?.dateString
+        streakLabel.text = habit?.streak.description
     }
     
     //MARK: - IBAction Method
@@ -47,6 +45,7 @@ class HabitDetailsViewController: UIViewController {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "EditHabbitViewController") as? EditHabbitViewController else
         { return }
         self.performSegue(withIdentifier: "EditHabbitViewController", sender: store.habits[indexPath.item])
+        controller.textField?.text = habit?.emoji
         self.present(controller, animated: true, completion: nil)
     }
     
@@ -67,17 +66,17 @@ class HabitDetailsViewController: UIViewController {
             let oldDateString = getDateString(date: oldDate)
             
             if dates.count == 0 {
-                numDays.text = "Total Days: \(val)"
+                dayCounterLabel.text = "Total Days: \(val)"
                 let newVal = habit!.streak + 1
                 habit!.streak = newVal
-                streak.text = "\(newVal) Day Streak!"
+                streakLabel.text = "\(newVal) Day Streak!"
                 // add new date to days tracked
                 dates.insert(currentDateString, at: 0)
                 
             } else {
                 // increase total days if current day is not the same as last day tracked
                 if currentDateString != dates[0] {
-                    numDays.text = "Total Days: \(val)"
+                    dayCounterLabel.text = "Total Days: \(val)"
                     // add new date to days tracked
                     dates.insert(currentDateString, at: 0)
                 }
@@ -85,10 +84,10 @@ class HabitDetailsViewController: UIViewController {
                 if oldDateString == dates[0] {
                     let newVal = habit!.streak + 1
                     habit!.streak = newVal
-                    streak.text = "\(newVal) Day Streak!"
+                    streakLabel.text = "\(newVal) Day Streak!"
                     ///change color streak.button to complete-green color,
                     if newVal >= 10 {
-                        streak.backgroundColor = UIColor.green
+                        streakLabel.backgroundColor = UIColor.green
                     }
                 }
             }
@@ -96,19 +95,22 @@ class HabitDetailsViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-}
-
-//MARK: -  Method
-
-func getDateString(date: Date) -> String {
-    let dateFormatter : DateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "HH:mm"
-    let dateString = dateFormatter.string(from: date)
     
-    return dateString
+    //MARK: -  Method
+
+    func getDateString(date: Date) -> String {
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
+
+    func setupDelegate() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
 }
-
-
 
 //MARK: - UITableViewDataSource
 

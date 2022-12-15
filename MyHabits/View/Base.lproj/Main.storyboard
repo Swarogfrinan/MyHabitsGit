@@ -356,6 +356,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="g9c-Y2-oMI" id="Whj-J2-hje"/>
+                                    <outlet property="delegate" destination="g9c-Y2-oMI" id="H1K-yT-dQi"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7J1-ei-0eo"/>
@@ -386,12 +390,12 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dayCounterLabel" destination="eJK-UQ-xnh" id="prG-Oe-MAJ"/>
                         <outlet property="editButton" destination="Q9r-ii-UKl" id="dDm-Ez-eaV"/>
-                        <outlet property="emoji" destination="jIf-Ql-cmD" id="lJF-Vf-HE6"/>
-                        <outlet property="habitName" destination="hgB-bc-yPh" id="Lca-p0-va0"/>
-                        <outlet property="numDays" destination="eJK-UQ-xnh" id="prG-Oe-MAJ"/>
-                        <outlet property="streak" destination="53i-G7-r1T" id="hRB-El-oyv"/>
+                        <outlet property="emojiLabel" destination="jIf-Ql-cmD" id="lJF-Vf-HE6"/>
+                        <outlet property="streakLabel" destination="53i-G7-r1T" id="hRB-El-oyv"/>
                         <outlet property="tableView" destination="EE8-kL-iKi" id="FjL-z4-lHa"/>
+                        <outlet property="titleLabel" destination="hgB-bc-yPh" id="Lca-p0-va0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOk-Xo-sWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

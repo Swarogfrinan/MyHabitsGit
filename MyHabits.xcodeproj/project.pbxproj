@@ -139,7 +139,6 @@
 				43B454B828323CED006354FD /* HabitCollectionViewCell.swift */,
 				4341600C283507E200973F1B /* DetailsTableViewCell.swift */,
 				43B454B628323CDF006354FD /* ProgressCollectionViewCell.swift */,
-				43B454BB28328F3F006354FD /* UIView+Extension.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -148,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				43BAE8A12833A92C003E852F /* CheckMark.swift */,
+				43B454BB28328F3F006354FD /* UIView+Extension.swift */,
 				43FB6833294A86C9006A42DE /* EmojiTextField.swift */,
 				437D6DFB294AB07600BF51E3 /* ProgressBar.swift */,
 			);
