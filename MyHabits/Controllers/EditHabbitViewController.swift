@@ -112,9 +112,9 @@ class EditHabbitViewController: UIViewController {
         let alert = UIAlertController(title: "Removing habit", message: "Do you want to remove habit \(String(describing: nameLabel.text))?", preferredStyle: .alert)
      
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {_ in
-            for (index, storageHabit) in self.store.habits.enumerated() {
-                if storageHabit.name == self.habit?.name {
-                    self.habit?.trackDates.remove(at: index)
+            for (index, _) in self.store.habits.enumerated() {
+//                if storageHabit.name == self.habit?.name {
+//                    self.habit?.trackDates.remove(at: index)
                     self.store.habits.remove(at: index)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4 , execute: {
                         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -122,7 +122,7 @@ class EditHabbitViewController: UIViewController {
                         let vc = HabitsViewController()
                         self.navigationController?.popToViewController(vc, animated: true)
                     })
-                }
+//                }
             }
         }))
      

@@ -17,7 +17,15 @@ class HabitDetailsViewController: UIViewController {
     var storeDetail = HabitsStore.shared.dates
     var habit: Habit?
     var dates: [String] = []
-    //    var streak = 0
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "en-US")
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
     
     //MARK: - viewDidLoad
     
@@ -126,7 +134,7 @@ extension HabitDetailsViewController:  UITableViewDataSource {
     }
     ///Возвращаем дату выполнения привычки.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dates.count
+        return storeDetail.count
     }
 }
 
@@ -136,7 +144,17 @@ extension HabitDetailsViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCell", for: indexPath)
-        cell.textLabel!.text = dates[indexPath.row]
+        
+        
+        cell.textLabel!.text = dateFormatter.string(from: store.dates[store.dates.count - indexPath.row - 1])
+        if let isHabit = habit {
+            if store.habit(isHabit, isTrackedIn: storeDetail[store.dates.count - indexPath.row - 1]) {
+                cell.accessoryType = .checkmark
+                cell.tintColor = .purple
+            }
+        }
+//        [indexPath.row]
+        
         return cell
     }
     
