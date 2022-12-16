@@ -8,8 +8,8 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     //MARK: - @IBOutlet
     
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var successLabel: UILabel!
+    @IBOutlet weak var progressBar: ProgressBar!
+    @IBOutlet weak var motivationLable: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     
     var progressLevel: Float? {
@@ -20,6 +20,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - Lifecycle
+    
     override func awakeFromNib() {
            super.awakeFromNib()
            backgroundColor = .white

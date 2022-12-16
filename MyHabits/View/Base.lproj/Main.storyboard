@@ -188,7 +188,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ProgressCell" id="dNw-dG-YRK" customClass="ProgressCollectionViewCell" customModule="MyHabits" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ProgressCollectionViewCell" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ProgressCollectionViewCell" id="dNw-dG-YRK" customClass="ProgressCollectionViewCell" customModule="MyHabits" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -222,9 +222,9 @@
                                         <constraint firstItem="DGB-Ql-CMP" firstAttribute="top" secondItem="tSW-6m-k82" secondAttribute="bottom" constant="15" id="mBZ-qI-Aw4"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="motivationLable" destination="UW3-MH-uNf" id="9xi-ao-dBI"/>
                                         <outlet property="percentLabel" destination="tSW-6m-k82" id="xfT-Gh-WCQ"/>
                                         <outlet property="progressBar" destination="DGB-Ql-CMP" id="NHz-sF-9UT"/>
-                                        <outlet property="successLabel" destination="UW3-MH-uNf" id="9xi-ao-dBI"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>

@@ -107,7 +107,7 @@ extension HabitsViewController: UICollectionViewDelegateFlowLayout {
 extension HabitsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProgressCell", for: indexPath) as! ProgressCollectionViewCell
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProgressCollectionViewCell.identifier, for: indexPath) as! ProgressCollectionViewCell
         header.progressLevel = store.todayProgress
         header.percentLabel.text = "\(Int((header.progressLevel ?? 0) * 100))%"
         return header
